@@ -65,4 +65,13 @@ public class ComparableVersionTest  {
         assertTrue(previous.compareTo(it) < 0);
     }
 
+    @Test
+    public void workableNextYearNewOldComparisonTest() {
+        ComparableVersion it = new ComparableVersion("2025-SMD130-2.0.7");
+        ComparableVersion previous = new ComparableVersion("2024-SMD130-2.0.6");
+        assertTrue(it.compareTo(previous) > 0);
+        assertTrue(previous.compareTo(previous) == 0);
+        assertTrue(previous.compareTo(it) < 0);
+    }
+
 }
