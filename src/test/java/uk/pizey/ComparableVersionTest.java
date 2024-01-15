@@ -33,13 +33,18 @@ public class ComparableVersionTest  {
         assertTrue(previous.compareTo(previousSnapshot) > 0);
     }
 
-    /* Initial proposal does not work*/
+    /**
+     * This test proves that the initial proposal does not work,
+     * the test passes because the sense of the assertion is flipped.
+     * */
     @Test
     public void initialNewOldComparisonFailsTest() {
         ComparableVersion it = new ComparableVersion("SMD130-2.0.6");
-        ComparableVersion previous = new ComparableVersion("2.0.6");
+        ComparableVersion previous = new ComparableVersion("2.0.5");
         assertFalse(it.compareTo(previous) > 0);
         assertTrue(previous.compareTo(previous) == 0);
+
+        // NOT this is assertFalse
         assertFalse(previous.compareTo(it) < 0);
     }
 
