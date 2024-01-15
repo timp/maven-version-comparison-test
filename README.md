@@ -3,11 +3,12 @@
 
 Code copied from https://github.com/apache/maven/blob/master/maven-artifact/src/main/java/org/apache/maven/artifact/versioning/ComparableVersion.java
 
-See https://tim-pizey.blogspot.com/2023/11/unique-versions-as-pitons-out-of-maven.html
+See https://tim-pizey.blogspot.com/2023/11/unique-versions-as-pitons-out-of-maven.html and https://tim-pizey.blogspot.com/2024/01/maven-version-schema-change.html
 
-Intended to show that proposed versioning scheme would work, shows that it does not and results in a new versioning scheme: 
+This repository is intended to show that a proposed versioning scheme would work, 
+it shows that the proposal does not and results in a new proposed versioning scheme: 
 
-&lt;year>-&lt;artefactcode>-&lt;semantic version> 
+&lt;year>-&lt;artefact code>-&lt;semantic version> 
 
 
 
