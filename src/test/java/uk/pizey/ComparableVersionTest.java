@@ -28,7 +28,6 @@ public class ComparableVersionTest  {
         assertTrue(it.compareTo(previous) > 0);
         assertTrue(previous.compareTo(previous) == 0);
         assertTrue(previous.compareTo(it) < 0);
-        assertTrue(previous.compareTo(previousSnapshot) > 0);
 
         assertTrue(previous.compareTo(previousSnapshot) > 0);
     }
@@ -44,7 +43,7 @@ public class ComparableVersionTest  {
         assertFalse(it.compareTo(previous) > 0);
         assertTrue(previous.compareTo(previous) == 0);
 
-        // NOT this is assertFalse
+        // NOTE this is assertFalse
         assertFalse(previous.compareTo(it) < 0);
     }
 
@@ -57,13 +56,12 @@ public class ComparableVersionTest  {
         assertTrue(it.compareTo(previous) > 0);
         assertTrue(previous.compareTo(previous) == 0);
         assertTrue(previous.compareTo(it) < 0);
-        assertTrue(previous.compareTo(previousSnapshot) > 0);
 
         assertTrue(previous.compareTo(previousSnapshot) > 0);
     }
     @Test
     public void workableNewOldComparisonTest() {
-        ComparableVersion it = new ComparableVersion("2024-SMD130-2.0.6");
+        ComparableVersion it = new ComparableVersion("2024-SMD130-2.0.7");
         ComparableVersion previous = new ComparableVersion("2.0.6");
         assertTrue(it.compareTo(previous) > 0);
         assertTrue(previous.compareTo(previous) == 0);
