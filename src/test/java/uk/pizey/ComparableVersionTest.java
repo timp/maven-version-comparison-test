@@ -47,8 +47,9 @@ public class ComparableVersionTest  {
         assertFalse(previous.compareTo(it) < 0);
     }
 
+
     @Test
-    public void workableProposalTest() {
+    public void proposal2ProposalTest() {
         ComparableVersion it = new ComparableVersion("2024-SMD130-2.0.6");
         ComparableVersion previous = new ComparableVersion("2024-SMD130-2.0.4");
         ComparableVersion previousSnapshot = new ComparableVersion("2024-SMD130-2.0.4-snapshot");
@@ -60,7 +61,7 @@ public class ComparableVersionTest  {
         assertTrue(previous.compareTo(previousSnapshot) > 0);
     }
     @Test
-    public void workableNewOldComparisonTest() {
+    public void proposal2NewOldComparisonTest() {
         ComparableVersion it = new ComparableVersion("2024-SMD130-2.0.7");
         ComparableVersion previous = new ComparableVersion("2.0.6");
         assertTrue(it.compareTo(previous) > 0);
@@ -69,12 +70,44 @@ public class ComparableVersionTest  {
     }
 
     @Test
-    public void workableNextYearNewOldComparisonTest() {
+    public void proposal2NextYearNewOldComparisonTest() {
         ComparableVersion it = new ComparableVersion("2025-SMD130-2.0.7");
         ComparableVersion previous = new ComparableVersion("2024-SMD130-2.0.6");
         assertTrue(it.compareTo(previous) > 0);
         assertTrue(previous.compareTo(previous) == 0);
         assertTrue(previous.compareTo(it) < 0);
     }
+
+    @Test
+    public void proposal3ProposalTest() {
+        ComparableVersion it = new ComparableVersion("2.130.2024.2.0.6");
+        ComparableVersion previous = new ComparableVersion("2.130.2024.2.0.5");
+        ComparableVersion previousSnapshot = new ComparableVersion("2.130.2024.2.0.5-snapshot");
+
+        assertTrue(it.compareTo(previous) > 0);
+        assertTrue(previous.compareTo(previous) == 0);
+        assertTrue(previous.compareTo(it) < 0);
+
+        assertTrue(previous.compareTo(previousSnapshot) > 0);
+    }
+    @Test
+    public void proposal3NewOldComparisonTest() {
+        ComparableVersion it = new ComparableVersion("2.130.2024.2.0.7");
+        ComparableVersion previous = new ComparableVersion("2.0.6");
+        assertTrue(it.compareTo(previous) > 0);
+        assertTrue(previous.compareTo(previous) == 0);
+        assertTrue(previous.compareTo(it) < 0);
+    }
+
+    @Test
+    public void proposal3NextYearNewOldComparisonTest() {
+        ComparableVersion it = new ComparableVersion("2.130.2025.2.0.7");
+        ComparableVersion previous = new ComparableVersion("2.130.2024.2.0.6");
+        assertTrue(it.compareTo(previous) > 0);
+        assertTrue(previous.compareTo(previous) == 0);
+        assertTrue(previous.compareTo(it) < 0);
+    }
+
+
 
 }
